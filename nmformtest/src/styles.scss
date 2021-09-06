@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import '_variables';
+
+body, html{
+    font-family: 'Sarabun' !important;
+}
+.button-container{
+    display: grid;
+    grid-gap: 5px;
+    grid-auto-flow: column;
+    justify-content: flex-start;
+}
+button{
+    padding: 8px 15px;
+    color:  $button-color;
+    background-color: $nm-turq;
+    border-radius: 8px;
+    border-width: 0;
+    cursor: pointer;
+    transition: 0.3s all;
+    max-width: 280px;
+    font-family: 'Sarabun';
+    &:hover{
+        background-color: darken($nm-turq, 10%);
+    }
+}

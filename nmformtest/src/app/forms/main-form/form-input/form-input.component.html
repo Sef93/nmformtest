@@ -1,0 +1,22 @@
+<label>
+    <div class="label">{{field.label}}</div>
+    <input type="text" [placeholder] = "field.placeholder"*ngIf="field.type === InputType.text" [formControl] = "fc">
+    <input type="date" *ngIf="field.type === InputType.date" [formControl] = "fc" placeholder="1980. 01. 01">
+</label>
+<div *ngIf="field.type === InputType.radio" class="option-input">
+        <label *ngFor="let option of field.options">{{option.label}}
+            <input type="radio" [attr.name] = "field.name"  [formControl] = "fc"  [value] = "option.value">
+        </label>
+</div>
+<span *ngIf="field.type === InputType.checkbox">
+    <div *ngFor="let option of field.options" class="option-input">
+        <label>
+            {{option.label}}
+            <input type="checkbox" [formControl] = "fc.get(option.name)">
+            <app-form-input *ngIf="option.activates && fc.get(option.name).value" [fc] = "fc.get(option.name + '-suboption')" [field] = "option.activates"></app-form-input>
+        </label>
+    </div>
+</span>
+<span *ngIf="isSubmitted && fc.invalid" class="errorMsg">
+    {{errorMsg}}
+</span>

@@ -1,0 +1,42 @@
+@import '../../../../variables';
+
+:host{
+    display: block;
+    padding: 5px 10px;
+    max-width: 280px;
+}
+.label{
+    margin-bottom: 4px;
+    text-decoration: underline;
+    color:$nm-turq;
+}
+input{
+    display: block;
+    padding: 5px 10px;
+    outline: 0;
+    border-radius: 8px;
+    border: 1px solid $dark-blue;
+    width: 100%;
+}
+.option-input{
+    display: grid;
+    grid-auto-flow: row;
+    gap: 10px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    &>label{
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: 60px 20px;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+.errorMsg{
+    font-size: 14px;
+    color: $error-red;
+}
+app-form-input{
+    min-width: 260px;
+}

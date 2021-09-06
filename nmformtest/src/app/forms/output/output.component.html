@@ -1,0 +1,10 @@
+<div class="button-container">
+    <button (click)="editForm()">Vissza a form szerkesztéséhez</button>
+    <button (click)="edit()" *ngIf="!editMode">Szöveg szerkesztése</button>
+    <button (click)="copy()"  *ngIf="!editMode">Vágólapra mentés</button>
+</div>
+{{solvedScript$ | async}}
+<div *ngIf="editMode">
+    <textarea type="text" [formControl] = "script" rows = 3 cols = 100></textarea>
+    <div class="button-container" ><button (click)="saveChanges()">Változtatások mentése</button></div>
+</div>

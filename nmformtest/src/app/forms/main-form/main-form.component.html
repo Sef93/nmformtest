@@ -1,0 +1,10 @@
+<div *ngIf="form">
+    <div *ngFor="let input of formData?.fields">
+        <app-form-input [field] = "input" [fc] = "form.get(input.name)" [isSubmitted] = "isSubmitted"></app-form-input>
+    </div>
+    <div class="button-container">
+        <button *ngFor="let button of formData?.buttons" (click)="buttonFunction(button.function)">
+            {{button.label}}
+        </button>
+    </div>
+</div>
